@@ -6,23 +6,23 @@ import Types from 'mongoose';
 
 export default class OrganisationService {
   /**
-   * Create a new club
-   * @param club
+   * Create a new organisation
+   * @param organisation
    */
-  static async createOrganisation(club: Definitions.IOrganisation) {
+  static async createOrganisation(organisation: Definitions.IOrganisation) {
     const newOrganisation = new Organisation({
-      organisationName: club.name,
-      description: club.description,
-      subscriptionType: club.subscriptionType,
-      masterAdmin: club.adminId,
+      organisationName: organisation.name,
+      description: organisation.description,
+      subscriptionType: organisation.subscriptionType,
+      masterAdmin: organisation.adminId,
       dateCreated: Date.now() / 1000,
     });
     return await newOrganisation.save();
   }
 
   /**
-   * Create a new club type
-   * @param clubType
+   * Create a new organisation type
+   * @param organisationType
    */
   static async createMembership(membership: Definitions.IMembership) {
     const newMembership = new Membership({

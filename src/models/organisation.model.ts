@@ -8,7 +8,7 @@ interface IOrganisation extends mongoose.Document {
   dateCreated: number;
 }
 
-export const ClubSchema = new mongoose.Schema({
+export const OrganisationSchema = new mongoose.Schema({
   organisationName: { type: String, required: true },
   description: { type: String },
   subscriptionType: { type: String, required: true },
@@ -16,5 +16,5 @@ export const ClubSchema = new mongoose.Schema({
   dateCreated: { type: Number, required: true },
 });
 
-const Club = mongoose.model<IOrganisation>('Organisation', ClubSchema);
-export default Club;
+const Organisation = mongoose.model<IOrganisation>('Organisation', OrganisationSchema);
+export default Organisation;

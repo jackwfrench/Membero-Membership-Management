@@ -16,5 +16,5 @@ const membershipSchema = new mongoose.Schema({
   dateCreated: { type: String, required: true },
 });
 
-const ClubType = mongoose.model<IMembership>('Membership', membershipSchema);
-export default ClubType;
+const Membership = mongoose.model<IMembership>('Membership', membershipSchema);
+export default Membership;

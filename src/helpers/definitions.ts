@@ -1,4 +1,3 @@
-// club interface
 export interface IOrganisation {
   name: string;
   description?: string;

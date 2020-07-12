@@ -12,7 +12,7 @@ import { validationResult } from 'express-validator';
 import { ErrorHandler } from '../helpers/error';
 
 /**
- * Create a new club
+ * Create a new organisation
  * @param req
  * @param res
  * @param next
@@ -33,7 +33,7 @@ export let createOrganisation = async (req: Request, res: Response, next: NextFu
 
     // send response
     return res.send({
-      message: 'club created',
+      message: 'organisation created',
       status: 'success',
       details: { organisationId: savedOrganisation._id },
     });
@@ -43,7 +43,7 @@ export let createOrganisation = async (req: Request, res: Response, next: NextFu
 };
 
 /**
- * Creates a new club type
+ * Creates a new Membership
  * @param req
  * @param res
  * @param next
@@ -81,7 +81,7 @@ export let getMemberships = async (req: Request, res: Response, next: NextFuncti
     // get memberships from organisation services
     const memberships = await OrganisationService.getMemberships(req.params.organisationId);
 
-    // respond with club types
+    // respond with memberships
     return res.send({ status: 'success', memberships: memberships });
   } catch (error) {
     next(error);
@@ -126,7 +126,7 @@ export let getMembers = async (req: Request, res: Response, next: NextFunction) 
 
     // check that admin is in organisation
     const isOrganisationAdmin = await OrganisationService.isAdmin(req.params.organisationId, req.user.id);
-    if (!isOrganisationAdmin) throw new ErrorHandler(401, 'Not a member of this club');
+    if (!isOrganisationAdmin) throw new ErrorHandler(401, 'Not a member of this organisation');
 
     // get member details
     const members = await MemberService.getMembers(req.params.organisationId);

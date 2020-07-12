@@ -16,7 +16,7 @@ let router: Router = express.Router();
  * @apiName CreateMember
  * @apiGroup Member
  *
- * @apiParam {String} organisationId Id of the club
+ * @apiParam {String} organisationId Id of the organisation
  * @apiParam {String} membershipId Membership Id
  * @apiParam {Object} form The form object with the details of the member
  */

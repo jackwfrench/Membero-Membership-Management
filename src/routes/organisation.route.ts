@@ -17,7 +17,7 @@ let router: Router = express.Router();
  * @apiGroup Organisation
  *
  * @apiParam {String} name Name of the organisation
- * @apiParam {String} subscriptionType Type of club
+ * @apiParam {String} subscriptionType Type of organisation
  * @apiParam {String} [description] Description of the organisation
  * @apiPermission admin
  */
@@ -67,13 +67,6 @@ router.get('/membership/:membershipId', OrganisationValidator.validateGetMembers
  * @apiGroup Organisation
  * @apiParam membershipId
  * @apiParam linkOpen
- *
- * @apiSuccessExample {json} Success-Response:
- *   200 OK
- *   {
- *     "firstname": "John",
- *     "lastname": "Doe"
- *   }
  */
 router.post('/onboardlink', validateToken, OrganisationValidator.validateOnboardLink, OrganisationController.onboardLinkStatus);
 

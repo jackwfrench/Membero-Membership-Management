@@ -53,7 +53,7 @@ export default class MemberService {
   }
 
   /**
-   * Get all members basic details in specified club
+   * Get all members basic details in specified organisation
    * @param organisationId
    */
   static async getMembers(organisationId: string) {
