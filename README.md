@@ -17,4 +17,4 @@ apidoc -i ./src -o apidoc/
 
 ## License
 
-This project is licensed under the MIT License - Read more at [LICENSE.md](./LICENSE.md)
+This project is licensed under the GNU General Public License v3.0 - Read more at [LICENSE.md](./LICENSE.md)
