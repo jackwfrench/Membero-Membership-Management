@@ -12,7 +12,7 @@ npm install
 # API Doc. Generation
 
 ```
-apidoc -y ./src -o apidoc/
+apidoc -i ./src -o apidoc/
 ```
 
 ## License
